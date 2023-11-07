@@ -17,6 +17,20 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+	<!-- dependency added -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.2.222</version>
+		</dependency>
+		
+	<!-- dependency added -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jdbc</artifactId>
+			<version>3.1.5</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -34,6 +48,22 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.1</version>
+				<configuration>
+					<logging>
+						<events>passed,skipped,failed</events>
+						<showExceptions>true</showExceptions>
+						<exceptionFormat>full</exceptionFormat>
+						<showCauses>true</showCauses>
+						<showStackTraces>true</showStackTraces>
+						<showStandardStreams>true</showStandardStreams>
+					</logging>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
